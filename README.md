@@ -138,17 +138,46 @@ wrangler secret put OPENAI_API_KEY  # Optional, only if you want authentication
 ```
 
 ### Step 4: Deploy
+ 
+ ```bash
+ # Install dependencies
+ npm install
+ 
+ # Deploy to Cloudflare Workers
+ npm run deploy
+```
+
+### 🏮 Standalone Script Mode (Simple Local Mode)
+
+If you don't want to use Cloudflare Workers or `wrangler`, you can run the proxy as a standalone Node.js server. This is similar to tools like `ChatMock` and provides an easy local endpoint.
 
 ```bash
 # Install dependencies
 npm install
 
-# Deploy to Cloudflare Workers
-npm run deploy
+# Start the standalone server
+npm start
 
-# Or run locally for development
-npm run dev
+# Or run with auto-reload (development)
+npm run dev:node
 ```
+
+The server will run at `http://localhost:3000` by default. Your OpenAI-compatible base URL will be `http://localhost:3000/v1`.
+
+**Key Features of Standalone Mode:**
+- 📁 **Local Caching**: Stores OAuth tokens in `.kv_cache.json` locally.
+- ⚡ **No Wrangler Required**: Runs directly via Node.js using `tsx`.
+- 🔄 **Ollama Compatible**: Works seamlessly with any client that supports OpenAI or Ollama APIs.
+
+---
+
+### Step 5: (Cloudflare only) Run locally for development
+ 
+ ```bash
+ # Or run locally for development using wrangler
+ npm run dev
+ ```
+
 
 ## 🔧 Configuration
 

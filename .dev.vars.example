@@ -69,3 +69,6 @@ ENABLE_AUTO_MODEL_SWITCHING=true
 
 # Optional: Include search entry point HTML (default: false)
 # INCLUDE_SEARCH_ENTRY_POINT=false
+
+# Optional: PORT settings for Simple Local Mode 
+# PORT=3000
